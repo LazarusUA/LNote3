@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arr">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        </string-array>
+
+    <string-array name="type">
+        <item>txt</item>
+        <item>java</item>
+        <item>cpp</item>
+        <item>c</item>
+        <item>html</item>
+        <item>css</item>
+        <item>xml</item>
+        <item>h</item>
+        <item>list</item>
+        <item>gradle</item>
+        <item>sh</item>
+        <item>desktop</item>
+        <item>iml</item>
+        <item>pas</item>
+        <item>dat</item>
+        <item>py</item>
+        <item>cs</item>
+        <item>js</item>
+        <item>properties</item>
+        <item>bat</item>
+        <item>ini</item>
+        <item>0</item>
+    </string-array>
+</resources>

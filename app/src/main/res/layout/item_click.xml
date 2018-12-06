@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@android:color/black"
+              android:id="@+id/view_item_click"
+              >
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            android:id="@+id/btn_delete"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/item_selected_btn"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="0.5dp"/>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rename"
+            android:id="@+id/btn_rename"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/item_selected_btn"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="0.5dp"/>
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/makeDir"
+            android:id="@+id/newFolder"
+            android:background="@drawable/item_selected_btn"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="0.5dp"/>
+</LinearLayout>

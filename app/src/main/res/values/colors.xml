@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f9f1b4</color>
+    <color name="colorPrimaryDark">#303f9f</color>
+    <color name="colorAccent">#ede182</color>
+
+    <color name="settings_press">#ff8800</color>
+    <color name="settings_default">#e27e0c</color>
+    <color name="holo_press_null">#0099cc</color>
+    <color name="holo_press">#053c80</color>
+
+    <color name="holo_dialog_press_null">#f9f1b4</color>
+    <color name="holo_dialog_press">#f4f1d0</color>
+    <color name="holo_light_primary">#ff2323</color>
+
+    <color name="ischeckedt">#ffdcdc</color>
+    <color name="ischeckedf">#ffffff</color>
+    <color name="grey">#cecece</color>
+    <color name="gr">#212121</color>
+    <color name="sp">#2e2e2e</color>
+    <color name="spd">#353535</color>
+</resources>

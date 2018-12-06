@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowBackground">@color/trans</item>
+        </style>
+    <color name="trans">#00000000</color>
+
+    <style name="THEME" parent="android:Theme.Holo.DialogWhenLarge">
+        <item name="android:actionBarStyle">@style/Tcl</item>
+    </style>
+    <style name="Tcl" parent="android:Widget.ActionBar">
+        <item name="android:background">#232323</item>
+    </style>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#00ffcc" android:paddingBottom="0.7dp">
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/icon"
+            android:src="@mipmap/ic_txt_file"
+            android:background="@android:color/background_dark"
+            android:paddingLeft="5dp"/>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:gravity="left|center"
+            android:background="@android:color/background_dark">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/name"
+                android:gravity="left|center"
+                android:paddingLeft="10dp"
+                android:textColor="@android:color/background_light"
+                android:textSize="16sp"
+                android:maxLines="1" android:paddingBottom="2dp"
+                android:paddingTop="2dp" android:paddingRight="2dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dp"
+                android:id="@+id/type"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:paddingRight="2dp" android:layout_marginLeft="10dp"
+        />
+    </LinearLayout>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/size"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="20dp"
+            android:background="@android:color/background_dark"/>
+</LinearLayout>

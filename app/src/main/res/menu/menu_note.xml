@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+        xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+    <item
+            android:title="@string/menu"
+            android:icon="@mipmap/ic_stat"
+            android:showAsAction="always"
+    >
+        <menu>
+            <item
+                    android:title="@string/new_doc"
+                    android:icon="@mipmap/ic_new_doc"
+                    android:id="@+id/newDoc"
+            />
+            <item
+                    android:title="@string/open"
+                    android:icon="@mipmap/ic_open"
+                    android:id="@+id/openMenu"
+                   />
+            <item
+                    android:title="@string/save"
+                    android:icon="@mipmap/ic_save"
+                    android:id="@+id/saveMenu"
+            />
+            <item
+                    android:title="@string/settings"
+                    android:icon="@mipmap/ic_settings"
+                    android:id="@+id/settingsMenu"
+            />
+
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Note"
+        android:orientation="vertical"
+        android:theme="@android:style/Theme.Holo.DialogWhenLarge"
+        >
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/NfileName"
+            android:textSize="14sp"
+            android:background="#303030"
+            android:textColor="#FFFFFF"
+            android:paddingLeft="4dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:background="#FFFFFF"
+        android:fillViewport="false">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/editText"
+            tools:ignore="ScrollViewSize"
+            android:inputType="textMultiLine"
+            android:background="#FFFFFF"
+            android:hint="@string/text"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp" />
+    </ScrollView>
+
+</LinearLayout>

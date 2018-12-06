@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context=".Note">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#252525">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="center">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font_size"
+                    android:id="@+id/textView3"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="normal"
+                    android:typeface="serif"
+                    android:textColor="#ffffff"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="2dp"/>
+
+            <Spinner
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/btn_dialog_size_text"
+                    android:entries="@array/SizeTXT"
+                    android:layout_marginRight="5dp"
+                    style="@android:style/Widget.DeviceDefault.Light.Spinner"
+                    android:background="@color/sp"
+                    android:popupBackground="#212121"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_marginTop="5dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/read_text"
+                    android:id="@+id/textView4"
+                    android:gravity="left|center"
+                    android:typeface="serif"
+                    android:textSize="20sp"
+                    android:paddingRight="7dp"
+                    android:paddingLeft="4dp"
+                    android:textColor="#ffffff"/>
+
+            <ToggleButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="New ToggleButton"
+                    android:id="@+id/isRead"
+                    android:textOff="@string/off"
+                    android:textOn="@string/on"
+                    android:typeface="serif"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/r"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="4dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

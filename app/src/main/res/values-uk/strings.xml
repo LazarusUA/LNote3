@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Блокнот</string>
+    <string name="open">Відкрити</string>
+    <string name="save">Зберегти</string>
+    <string name="settings">Налаштування</string>
+    <string name="menu">Меню</string>
+    <string name="manager">Файловий Менеджер</string>
+    <string name="text">Поле для тексту</string>
+    <string name="font_size">Розмір шрифту:</string>
+    <string name="read_text">Режим читання</string>
+    <string name="confirmation">Застосувати</string>
+    <string name="cancel">Відмінити</string>
+    <string name="yes">Так</string>
+    <string name="no">Ні</string>
+    <string name="delete">Видалити</string>
+    <string name="rename">Перейменувати</string>
+    <string name="makeDir">Нова папка</string>
+    <string name="make">Створити</string>
+    <string name="off">Вимкнено</string>
+    <string name="on">Увімкнено</string>
+    <string name="new_doc">Новий документ</string>
+</resources>

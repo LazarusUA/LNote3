@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" android:id="@+id/view_make_dir" android:background="#252222">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Назва папки:"
+                android:id="@+id/textViewW" android:typeface="serif" android:textSize="18sp"
+                android:textColor="#FFFFFF" android:paddingLeft="10dp" android:paddingTop="5dp"
+                android:paddingRight="10dp" android:paddingBottom="5dp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dir_name" android:inputType="text" android:layout_margin="5dp"
+                android:background="@color/sp" android:padding="7dp"/>
+    </LinearLayout>
+</LinearLayout>

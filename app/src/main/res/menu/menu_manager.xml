@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:icon="@mipmap/ic_storage_home"
+    android:showAsAction="ifRoom"
+    android:id="@+id/storage_home"
+    android:title="Внутрішнє сховище">
+    </item>
+    <item
+        android:icon="@mipmap/ic_storage_external"
+        android:showAsAction="always"
+        android:id="@+id/storage_external"
+        android:title="Зовнішнє сховище">
+    </item>
+</menu>
