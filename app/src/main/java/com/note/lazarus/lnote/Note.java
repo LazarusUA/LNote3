@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.*;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -45,17 +46,14 @@ public class Note extends Activity {
             InMem = PreferenceManager.getDefaultSharedPreferences(this);
 
         } catch (Exception e) {
+            Log.e("CREATE", e.toString());
             Toast.makeText(Note.this, e.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        try {
-            getMenuInflater().inflate(R.menu.menu_note, menu);
-        } catch (Exception e) {
-            Toast.makeText(Note.this, e.toString(), Toast.LENGTH_SHORT).show();
-        }
+        getMenuInflater().inflate(R.menu.menu_note, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -63,13 +61,14 @@ public class Note extends Activity {
     /////////////////START///////////////////////////////////////////////////////////////////
     @Override
     protected void onStart() {
+        super.onStart();
         try {
             if (getIntent().getStringExtra("PATH") != null) {
                 Open(getIntent().getStringExtra("PATH"));
                 FileName.setText(getIntent().getStringExtra("PATH"));
             } else {
                 Text.setText(InMem.getString("SaveText", ""));
-                FileName.setText(InMem.getString("PATH",""));
+                FileName.setText(InMem.getString("PATH", ""));
             }
 
             Intent intent = getIntent();
@@ -91,9 +90,8 @@ public class Note extends Activity {
         } catch (Error e) {
             Toast.makeText(Note.this, e.toString(), Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e("START", e.toString());
         }
-        super.onStart();
     }
 
 
@@ -101,8 +99,7 @@ public class Note extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         try {
             switch (item.getItemId()) {
-                case (Widget.NEW_DOC):
-                {
+                case (Widget.NEW_DOC): {
                     new AlertDialog.Builder(This).
                             setMessage("Створити заготовку?")
                             .setPositiveButton("Так", new DialogInterface.OnClickListener() {
@@ -113,7 +110,7 @@ public class Note extends Activity {
                                     FileName.setText("");
                                 }
                             }).
-                            setNeutralButton("Ні",null).
+                            setNeutralButton("Ні", null).
                             show();
                     break;
                 }
@@ -123,7 +120,7 @@ public class Note extends Activity {
                     managerIntent = new Intent(This, Manager.class);
                     managerIntent.putExtra("Type", 1);
                     InMem.edit().putString("SaveText", String.valueOf(Text.getText())).
-                            putString("PATH",FileName.getText().toString()).
+                            putString("PATH", FileName.getText().toString()).
                             apply();
                     startActivity(managerIntent);
                     this.finish();
@@ -133,7 +130,7 @@ public class Note extends Activity {
                     managerIntent = new Intent(This, Manager.class);
                     managerIntent.putExtra("Type", 2);
                     InMem.edit().putString("SaveText", String.valueOf(Text.getText())).
-                            putString("PATH",FileName.getText().toString()).
+                            putString("PATH", FileName.getText().toString()).
                             apply();
                     startActivity(managerIntent);
                     this.finish();
@@ -148,6 +145,7 @@ public class Note extends Activity {
 
         } catch (Exception e) {
             Toast.makeText(Note.this, e.toString(), Toast.LENGTH_SHORT).show();
+            Log.e("ITEM_SELECTED", e.toString());
         }
         return super.onOptionsItemSelected(item);
     }
@@ -157,13 +155,13 @@ public class Note extends Activity {
             AlertDialog.Builder alertBuilderSettings = new AlertDialog.Builder(this, R.style.Theme);
 
             LayoutInflater rootSettings = this.getLayoutInflater();
-            View settingsView = rootSettings.inflate(R.layout.settings,null);
+            View settingsView = rootSettings.inflate(R.layout.settings, null);
             alertBuilderSettings.setView(settingsView);
             alertBuilderSettings.setTitle(R.string.settings);
 
-            isRead = (ToggleButton) settingsView.findViewById(Widget.IS_READ);
+            isRead = settingsView.findViewById(Widget.IS_READ);
 
-            spin = (Spinner) settingsView.findViewById(R.id.btn_dialog_size_text);
+            spin = settingsView.findViewById(R.id.btn_dialog_size_text);
 
             spin.setSelection(InMem.getInt("TEXT_SIZE", 4));
             isRead.setChecked(InMem.getBoolean("isRead", false));

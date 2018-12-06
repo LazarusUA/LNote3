@@ -48,11 +48,11 @@ public class Manager extends Activity {
         try {
             setContentView(R.layout.manager);
             this.getActionBar().setDisplayHomeAsUpEnabled(true);
-            lBar = (LinearLayout) findViewById(R.id.lay_save_bar);
-            labelPath = (TextView) findViewById(Widget.LabelPath);
-            listView = (ListView) findViewById(Widget.LIST);
-            btnSave = (Button) findViewById(Widget.BTN_SAVE);
-            fileName = (EditText) findViewById(Widget.FILE_NAME);
+            lBar = findViewById(R.id.lay_save_bar);
+            labelPath = findViewById(Widget.LabelPath);
+            listView = findViewById(Widget.LIST);
+            btnSave = findViewById(Widget.BTN_SAVE);
+            fileName = findViewById(Widget.FILE_NAME);
 
             mgrC = new ManagerCode();
             mgrL = new ManagerList();
@@ -157,7 +157,7 @@ public class Manager extends Activity {
         makeDirDialog.setTitle("Нова папка в \"" + stringPath + "\"");
         View view = getLayoutInflater().inflate(R.layout.view_make_dir, null);
         makeDirDialog.setView(view);
-        final EditText dirName = (EditText) view.findViewById(R.id.dir_name);
+        final EditText dirName = view.findViewById(R.id.dir_name);
 
         makeDirDialog.setPositiveButton(getResources().getString(R.string.make),
                 new DialogInterface.OnClickListener() {
@@ -166,9 +166,9 @@ public class Manager extends Activity {
                         new File(stringPath + "/" + dirName.getText().toString()).mkdirs();
                         getFileList(stringPath);
                         listView.setFocusable(true);
-
                     }
                 });
+        
         makeDirDialog.setNeutralButton(getResources().getString(R.string.cancel), null);
         makeDirDialog.show();
     }
@@ -180,15 +180,15 @@ public class Manager extends Activity {
             stringPath = path;
             arrayFile = mgrL.Filter(file.listFiles());
             ArrayList<Map<String, Object>> list = new ArrayList<>(arrayFile.length);
+
             for (File finish : arrayFile) {
-                Map map = new HashMap<>();
+                Map<String, Object> map = new HashMap<>();
                 if (finish.isFile()) {
                     map.put("Name", mgrC.getName(finish.getName()));
-                    map.put("Type",mgrC.getFileType(finish.getName()).equals("0") ? "" :
+                    map.put("Type", mgrC.getFileType(finish.getName()).equals("0") ? "" :
                             mgrC.getFileType(finish.getName()));
                 } else
                     map.put("Name", finish.getName());
-
 
                 if (finish.isDirectory()) {
                     if (mgrC.getSpace(finish) > 0) {
@@ -199,17 +199,22 @@ public class Manager extends Activity {
                 } else if (finish.isFile()) {
                     map.put("Size", mgrC.getSize(finish));
 
-                    if (mgrC.getFileType(finish.getName()).equals("txt")) {
-                        map.put("Icon", R.mipmap.ic_txt_file);
-                    } else if (mgrC.getFileType(finish.getName()).equals("apk")) {
-                        map.put("Icon", R.mipmap.ic_file_apk);
-                    } else
-                        map.put("Icon", R.mipmap.ic_file);
+                    switch (mgrC.getFileType(finish.getName())) {
+                        case "txt":
+                            map.put("Icon", R.mipmap.ic_txt_file);
+                            break;
+                        case "apk":
+                            map.put("Icon", R.mipmap.ic_file_apk);
+                            break;
+                        default:
+                            map.put("Icon", R.mipmap.ic_file);
+                            break;
+                    }
                 }
 
                 list.add(map);
             }
-            String[] name = {"Name", "Icon", "Size","Type"};
+            String[] name = {"Name", "Icon", "Size", "Type"};
             int[] id = {R.id.name, R.id.icon, R.id.size, R.id.type};
             SimpleAdapter adapter = new SimpleAdapter(this, list, R.layout.list, name, id);
             listView.setAdapter(adapter);
@@ -247,7 +252,7 @@ public class Manager extends Activity {
                 .setNeutralButton(getResources().getString(R.string.cancel), null);
 
         View renameV = getLayoutInflater().inflate(R.layout.rename_layout, null);
-        final EditText name = (EditText) renameV.findViewById(R.id.name);
+        final EditText name = renameV.findViewById(R.id.name);
 
         name.setText(renamePath.getName());
         renameDialog.setView(renameV);
@@ -267,7 +272,7 @@ public class Manager extends Activity {
     }
 
     ///////////////////////////////////EVENT//////////////////////////////////////////////////////////////
-    private void event() throws Exception {
+    private void event() {
         btnSave.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -302,7 +307,6 @@ public class Manager extends Activity {
 
                     if ((getIntent().getIntExtra("Type", 0)) == 1) {
 
-
                         for (int i = 0; i < type_len; i++)
                             if (getResources().getStringArray(R.array.type)[i]
                                     .equals(mgrC.getFileType(arrayFile[position].getName()))) {
@@ -330,9 +334,9 @@ public class Manager extends Activity {
                 al.setTitle(arrayFile[position].getName());
                 View v = getLayoutInflater().inflate(R.layout.item_click, null);
 
-                Button delete = (Button) v.findViewById(R.id.btn_delete);
-                final Button rename = (Button) v.findViewById(R.id.btn_rename);
-                Button newFolder = (Button) v.findViewById(R.id.newFolder);
+                Button delete =  v.findViewById(R.id.btn_delete);
+                final Button rename =  v.findViewById(R.id.btn_rename);
+                Button newFolder =  v.findViewById(R.id.newFolder);
 
                 delete.setOnClickListener(new OnClickListener() {
                     @Override
